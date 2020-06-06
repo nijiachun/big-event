@@ -60,7 +60,7 @@ $(function () {
        4.2 如果失败，给出提示
     */
 
-    $('.login form').on('click', function (e) {
+    $('.login form').on('submit', function (e) {
         e.preventDefault();
         $.ajax({
             type: 'POST',
