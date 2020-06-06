@@ -1,0 +1,52 @@
+html, body{
+ height: 100%;
+ width: 100%;
+}
+body{
+    background: url("/assets/images/login_bg.jpg") no-repeat;
+    background-size: cover;
+}
+
+/* logo区 */
+#logo{
+    margin: 20px 0 0 50px;
+}
+
+/* 登录注册盒子 */
+.login,.register{
+    background-color: #fff;
+    height: 310px;
+    width: 400px;
+    position: absolute;
+    left: 50%;
+    top:50%;
+    transform: translate(-50%,-50%);
+}
+.register{
+    display: none;
+}
+
+/* 标题区 */
+.title{
+    height: 60px;
+    background: url("/assets/images/login_title.png") no-repeat center center;
+}
+
+form{
+    margin: 0 25px;
+}
+#goto-reg,#goto-login{
+    float: right;
+}
+
+.layui-form-item{
+    position: relative;
+}
+.layui-form-item .layui-icon{
+    position: absolute;
+    top:10px;
+    left: 10px;
+}
+.layui-input{
+    padding-left: 30px;
+}
