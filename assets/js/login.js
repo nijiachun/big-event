@@ -20,7 +20,7 @@ $(function () {
             url: "http://www.liulongbin.top:3007/api/reguser",
             data: data,
             success: function (res) {
-                alert(res.message);
+                layer.msg(res.message);
                 if (res.status === 0) {
                     $('.register').hide().prev().show();
                 }
@@ -47,7 +47,32 @@ $(function () {
             if (password !== val) {
                 return "两次密码不一致";
             }
-        }
+        },
 
+    })
+
+    // -------------------------登录功能
+    /* 1、监听登录表单的提交事件
+    2、阻止默认行为
+    3、ajax提交账号和密码
+    4、根据服务器返回的结果
+       4.1 如果登录成功，跳转到首页
+       4.2 如果失败，给出提示
+    */
+
+    $('.login form').on('click', function (e) {
+        e.preventDefault();
+        $.ajax({
+            type: 'POST',
+            url: "http://www.liulongbin.top:3007/api/login",
+            data: $(this).serialize(),
+            success: function (res) {
+                layer.msg(res.message);
+                if (res.status === 0) {
+                    localStorage.setItem('token', res.token);
+                    window.location.href = '/index.html'
+                }
+            }
+        })
     })
 });
