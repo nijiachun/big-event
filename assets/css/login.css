@@ -1,6 +1,7 @@
 html, body{
  height: 100%;
  width: 100%;
+ overflow: hidden;
 }
 body{
     background: url("/assets/images/login_bg.jpg") no-repeat;
