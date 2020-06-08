@@ -1,3 +1,10 @@
+<script>
+    // 判断本地存储中是否有token，如无，则没有登录，跳转到登录页面
+    if (localStorage.getItem('token') == null) {
+        location.href = '/login.html';
+    }
+</script>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,8 +30,9 @@
             <ul class="layui-nav layui-layout-right" lay-shrink="all">
                 <li class="layui-nav-item">
                     <a href="javascript:;">
+                        <span class="text-avater">L</span>
                         <img src="http://t.cn/RCzsdCq" class="layui-nav-img">
-                        欢迎&nbsp;&nbsp;<span class="myname">老汤</span>
+                        个人中心
                     </a>
                     <dl class="layui-nav-child">
                         <dd><a href="">基本资料</a></dd>
@@ -32,7 +40,8 @@
                         <dd><a href="">重置密码</a></dd>
                     </dl>
                 </li>
-                <li class="layui-nav-item"><a href=""><i class="layui-icon layui-icon-logout"></i>退出</a></li>
+                <li class="layui-nav-item"><a href="javascript:;" id="logout"><i
+                            class="layui-icon layui-icon-logout"></i>退出</a></li>
             </ul>
         </div>
 
