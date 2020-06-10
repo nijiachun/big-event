@@ -18,7 +18,7 @@ function getUserInfo() {
         type: 'get',
         url: 'http://www.liulongbin.top:3007/my/userinfo',
         success: function (res) {
-            console.log(res);
+            // console.log(res);
             if (res.status === 0) {
                 // 设置欢迎词
                 var myname = res.data.nickname || res.data.username;
