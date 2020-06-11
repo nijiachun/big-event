@@ -25,7 +25,7 @@ $(function () {
     $('form').on('submit', function (e) {
         e.preventDefault();
         $.ajax({
-            url: 'http://www.liulongbin.top:3007/my/updatepwd',
+            url: '/my/updatepwd',
             type: 'POST',
             data: $(this).serialize(),
             success: function (res) {
@@ -34,16 +34,16 @@ $(function () {
                     $('form')[0].reset();// 需要转DOM对象
                 }
             },
-            headers: {
-                'Authorization': localStorage.getItem('token')
-            },
-            complete: function (xhr) {
-                // token可能会过期
-                if (xhr.status === 1 && xhr.message === '身份认证失败！') {
-                    localStorage.removeItem('token');
-                    window.parent.location.href = "/login.html";
-                }
-            }
+            // headers: {
+            //     'Authorization': localStorage.getItem('token')
+            // },
+            // complete: function (xhr) {
+            //     // token可能会过期
+            //     if (xhr.status === 1 && xhr.message === '身份认证失败！') {
+            //         localStorage.removeItem('token');
+            //         window.parent.location.href = "/login.html";
+            //     }
+            // }
 
         });
     })

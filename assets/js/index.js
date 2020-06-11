@@ -16,7 +16,7 @@ $(function () {
 function getUserInfo() {
     $.ajax({
         type: 'get',
-        url: 'http://www.liulongbin.top:3007/my/userinfo',
+        url: '/my/userinfo',
         success: function (res) {
             // console.log(res);
             if (res.status === 0) {
@@ -33,15 +33,8 @@ function getUserInfo() {
                     $('.text-avater').text(t);
                     $('.layui-nav-img').hide();
                 }
-            } else if (res.status === 1 && res.message === '身份认证失败！') {
-                localStorage.removeItem('token');
-                window.location.href = "/login.html";
             }
-
         },
 
-        headers: {
-            'Authorization': localStorage.getItem('token')
-        }
     });
 }

@@ -6,7 +6,7 @@ function renderUser() {
 
     $.ajax({
         type: 'get',
-        url: 'http://www.liulongbin.top:3007/my/userinfo',
+        url: '/my/userinfo',
         success: function (backData) {
             // console.log(backData);
             if (backData.status == 0) {
@@ -14,16 +14,7 @@ function renderUser() {
             }
 
         },
-        headers: {
-            'Authorization': localStorage.getItem('token')
-        },
-        complete: function (xhr) {
-            // token可能会过期
-            if (xhr.status === 1 && xhr.message === '身份认证失败！') {
-                localStorage.removeItem('token');
-                window.parent.location.href = "/login.html";
-            }
-        }
+
     });
 }
 $(function () {
@@ -37,22 +28,13 @@ $(function () {
         var data = $('form').serialize();
         $.ajax({
             type: 'post',
-            url: 'http://www.liulongbin.top:3007/my/userinfo',
+            url: '/my/userinfo',
             data: data,
             success: function (backData) {
                 layer.msg(backData.message);
                 window.parent.getUserInfo();
             },
-            headers: {
-                'Authorization': localStorage.getItem('token')
-            },
-            complete: function (xhr) {
-                // token可能会过期
-                if (xhr.status === 1 && xhr.message === '身份认证失败！') {
-                    localStorage.removeItem('token');
-                    window.parent.location.href = "/login.html";
-                }
-            }
+
         });
     })
 
