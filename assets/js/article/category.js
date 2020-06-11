@@ -54,7 +54,7 @@ $(function () {
 
     // 2.监听添加类别的表单提交事件（动态生成的都需要委托注册）
     /* 1.阻止表单默认行为，发送ajax请求，新增数据 */
-    $('body').on('submmit', '.add-form', function (e) {
+    $('body').on('submit', '.add-form', function (e) {
         e.preventDefault();
         var data = $(this).serialize();
         $.ajax({
