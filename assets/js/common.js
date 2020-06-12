@@ -7,7 +7,7 @@ $(function () {
         ......
         } */
 
-        option.url = "http://www.liulongbin.top:3007" + option.url;
+        option.url = 'http://www.liulongbin.top:3007' + option.url;
 
         option.complete = function (xhr) {
             // token可能会过期
