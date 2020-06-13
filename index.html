@@ -1,6 +1,6 @@
 <script>
     // 判断本地存储中是否有token，如无，则没有登录，跳转到登录页面
-    if (localStorage.getItem('token') == null) {
+    if (localStorage.getItem('token') === null) {
         location.href = '/login.html';
     }
 </script>

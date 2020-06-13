@@ -11,7 +11,7 @@ $(function () {
 
         option.complete = function (xhr) {
             // token可能会过期
-            if (xhr.status === 1 && xhr.message === '身份认证失败！') {
+            if (xhr.responseJSON.status === 1 && xhr.responseJSON.message === '身份认证失败！') {
                 localStorage.removeItem('token');
                 window.parent.location.href = "/login.html";
             }
